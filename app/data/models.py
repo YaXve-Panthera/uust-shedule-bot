@@ -19,4 +19,11 @@ class WeekSchedule(BaseModel):
     week: int
     schedule: str
 
+class User(BaseModel):
+    id: int
+    date_of_registry: date
+    group_id: int
+    mailing: bool
+    mailing_type: str
+    mailing_time: str
 
