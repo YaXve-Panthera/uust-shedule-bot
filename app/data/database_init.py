@@ -57,7 +57,9 @@ async def find_duplicate_group_names():
 async def main():
     await db.connect()
     try:
-        print(await find_duplicate_group_names())
+        await insert_faculties()
+        await insert_groups()
+        await lower_names()
     except Exception as e:
         print(f"Error inserting data: {e}")
     finally:

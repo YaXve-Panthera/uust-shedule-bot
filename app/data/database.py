@@ -1,6 +1,6 @@
 import asyncio
 import asyncpg
-from app.config import DB_CONFIG, DB_USER, DB_PASS, DB_NAME, DB_HOST
+from app.config import DB_CONFIG, DB_USER, DB_PASS, DB_NAME, DB_HOST, DB_PORT
 
 
 class Database:
