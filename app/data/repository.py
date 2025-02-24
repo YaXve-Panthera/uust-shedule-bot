@@ -13,8 +13,14 @@ async def get_faculties_by_city(city: str):
         result_rows = await conn.fetch(query, city)
         return [Faculty(**dict(row)) for row in result_rows]
 
-async def get_faculty_id_by_name(name: str):
+async def get_faculty_id_by_name(fac_name: str):
     async with db.pool.acquire() as conn:
         query = "SELECT * FROM faculties WHERE name = $1"
-        res = await conn.fetchval(query, name)
+        res = await conn.fetchval(query, fac_name)
+        return res
+
+async def get_group_by_name(group_name: str):
+    async with db.pool.acquire() as conn:
+        query = "SELECT * FROM groups WHERE name = $1"
+        res = await conn.fetchval(query, group_name)
         return res
